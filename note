@@ -1,42 +1,62 @@
-### 第一题
-1、数据类型包含：基本数据类型和引用数据类型
-基本数据类型：字符串string，数字number，布尔boolean,null,undefined
-引用数据类型：对象数据类型和函数数据类型；
-2、数据类型检测的方法：1）typeof 2)constructor 3)instanceof 4)Object.prototype.toString.call();
-3、基本数据类型和应用数据类型的区别：基本数据类型是对值的引用，引用数据类型是对地址的引用；
-4、1）形参 2）arguments；
-5、setInterval setTimeout
+### 怎么判断git是否安装成功 git --version
+    只要能打印出版本号，就代表git安装成功；
+### 如何配置git
+    + git config --global user.name "github的用户名"
+    + git config --global user.email "github的邮箱地址"
 
-### 第二题
-1、 document.getElementById('div1');
-document.getElementsByTagName('div')[0];
-document.getElementsByClassName('box')[0];
-document.querySelector('#div1');
-document.querySelector('div');
-document.querySelector('.box');
-document.querySelectorAll('#div1')[0];
-document.querySelectorAll('div')[0];
-document.querySelectorAll('.box')[0];
-2、var oP=document.createElement('p')
-document.body.appendChild(oP)
-3、previousSibling
-4、substr()   substring() slice()
-5、replace();
+### 如何创建本地仓库
+    1、创建一个空文件夹
+    2、把文件夹变成git可以管理的仓库：git init
+       + 如何查看当前文件夹下有哪些子文件 ls -a
+    3、把本地仓库在cmd中打开
+        + 左手按shift+右手点击右键； 选择在此处打开命令行；
+### 关于远程仓库
+- 如何查看链接了哪些远程仓库
+    + git remote -v
+- 链接远程仓库
+    + git remote add 远程通道名称 通道地址
+    远程仓库名称：（自己起的，一般自己的远程仓库，默认是origin）
+    通道地址：从github上复制粘贴过来的；
+    + 移出远程通道 ： git remote rm 通道名称
+### git工作流-》目的：把本地仓库的内容，推送到远程仓库；
+1、 git add .   代表把当前目录下，所有的文件都推送上去；
+2、 git commit -m"注释"   把工作区的内容推送到暂存区
+3、 git push origin master 把暂存区的内容推送到历史区；即推送到GitHub的远程仓库的master分支上去；
+### git克隆
+- git clone
+- 注意：通过git clone之后的文件夹，不能直接进行提交，必须进入clone下来的文件夹，才能运行git工作流
+    + git add .
+    + git commit -m"注释"
+    + git push origin master
+-
+### 涉及一些常见的命令
+- 进入某个文件夹： cd 文件夹的名字
+- 文件夹名字自动补全： 先写上一部分+ tab键自动补全
+- 回退到上一级：cd ../
 
-### 第三题
-1、给数组末尾追加：ary.push()  ary[ary.length]=xxx;  ary.splice(ary.length+1,0,xxxx)
-2、删除数组最后一项：ary.pop()   ary.splice(ary.length-1,1)  ary.length--;  ary.length-=1; ary.length=ary.length-1;
-3、forEach()  map()  for(var i=0; i<ary.length; i++){}
-4、sort(function(a,b){return a-b});
-5、 ary.slice(n-1,m);
+### 学生更新老师讲义 ： 老师贡献代码；
+1、 把老师发到群里的地址，复制粘贴到自己github的地址栏
+2、 回车后会进入老师的远程仓库，通过fork把项目用叉子叉到自己的远程；
+3、 通过git clone 自己远程仓库的地址； 把自己远程克隆到自己本地；
+4、 建立自己本地和teacher远程之间的联系
+    + git remote add teacher https://github.com/yuanmengyuan/javascript2017628.git
+5、 当老师内容更新的时候，学生需要做2步
+    1、 git remote update teacher
+    2、 git pull teacher master   把远程更新拉到本地
+**小总结：当老师远程内容更新的时候，影响了学生本地**
+### 学生提交作业  ：  学生贡献代码；
+1、 学生更新自己本地的内容
+2、 学生把自己本地新内容，提交到自己远程
+    + git add .
+    + git commit -m"xxx"
+    + git push origin master
+3、 点击 new pull request 按钮
+    再点击create pull request 按钮，可以写注释 create pull request
+    
 
-### 第四题
-1、 Math.round(Math.random()*(m-n)+n);
-2、 Math.max()  Math.min()
-3、 true
-4、 true
-5、'ok'；
 
-### 第五题
+
+
+
 
 
